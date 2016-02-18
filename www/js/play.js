@@ -9,12 +9,12 @@ dodge.play = function () {};
 dodge.play.prototype = {
 
   inti: function () {
-    console.log("%c~~~ Booting Dodge ~~~/n Compliments of SkilStak", " color:#fdfe3; backround:073642)
+    console.log("%c~~~ Booting Dodge ~~~/n Compliments of SkilStak", " color:#fdfe3; backround:073642);
 
   },
 
   preload function () {
-    this.load.image('backgroud', 'assets/space.png')
+    this.load.image('background', 'assets/space.png');
   },
 
   create: function () {
