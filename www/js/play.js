@@ -25,10 +25,10 @@ dodge.play.prototype = {
     this.background.scale.set(1);
 
     this.dodger = this.add.sprite(160,518, 'dodger');
-    this.dodger.set.anchor.set(0.5,0.5);
+    this.dodger.anchor.set(0.5,0.5);
 
     this.dodging = this.add.sprite(160,518, 'dodging')
-    this.dodging.set.anchor.set(0.5,0.5);
+    this.dodginganchor.set(0.5,0.5);
 
     this.cursors = game.input.keybourd.createCursorekeys()
   },
