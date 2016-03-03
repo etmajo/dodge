@@ -30,7 +30,7 @@ dodge.play.prototype = {
     this.dodging = this.add.sprite(160,518, 'dodging')
     this.dodging.anchor.set(0.5,0.5);
 
-    this.cursors = game.input.keybourd.createCursorekeys()
+    this.cursors = game.input.keyboard.createCursorekeys()
   },
 
   update: function () {
