@@ -20,6 +20,9 @@ dodge.play.prototype = {
   },
 
   create: function () {
+
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
     this.background = this.add.tileSprite(0,0,320,568,"space.png");
     this.background.autoScroll(0,50);
     this.background.scale.set(1);
@@ -30,14 +33,14 @@ dodge.play.prototype = {
     this.dodging = this.add.sprite(160,518, 'dodging')
     this.dodging.anchor.set(0.5,0.5);
 
-    this.cursors = game.input.keyboard.createCursoreKeys()
-  },
+    this.cursors = game.input.keyboard.createCursorKeys();
+  }
 
   update: function () {
-    if (this.cursore.left.isDown) {
+    if (this.cursor.left.isDown) {
       this.dodger.x -= 10;
     }
-    if (this.cursore.right.isDown) {
+    if (this.cursor.right.isDown) {
       this.dodger.x -= 10;
     }
   }
