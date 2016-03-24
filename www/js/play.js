@@ -37,12 +37,14 @@ dodge.play.prototype = {
   }
 
   update: function () {
+    game.physics.arcade.collide(dodger, dodging, collisionHandler)
     if (this.cursor.left.isDown) {
       this.dodger.x -= 10;
     }
     if (this.cursor.right.isDown) {
       this.dodger.x -= 10;
-    }
+    },
+    
   }
 };
 
