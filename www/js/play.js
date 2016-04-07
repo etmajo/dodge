@@ -4,9 +4,9 @@
 
 var dodge = {};
 
-dodge.play = function () {};
+dodge.Play = function () {};
 
-dodge.play.prototype = {
+dodge.Play.prototype = {
 
   inti: function () {
     console.log("%c~~~ Booting Dodge ~~~/n Compliments of SkilStak", " color:#fdfe3; background:#073642");
@@ -24,7 +24,7 @@ dodge.play.prototype = {
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
     this.background = this.add.tileSprite(0,0,320,568,"space.png");
-    this.background.autoScroll(0,50);
+    this.background.autoScroll(0,700);
     this.background.scale.set(1);
 
     this.dodger = this.add.sprite(160,518, 'dodger');
@@ -37,14 +37,19 @@ dodge.play.prototype = {
   }
 
   update: function () {
-    game.physics.arcade.collide(dodger, dodging, collisionHandler)
     if (this.cursor.left.isDown) {
       this.dodger.x -= 10;
     }
     if (this.cursor.right.isDown) {
       this.dodger.x -= 10;
     },
-    
+    game.physics.arcade.collide(dodger, dodging, collisionHandler)
+  }
+  
+  handleCollision: function() {
+    console.log("U lost")
+    game.state.start('Play')
+  }
   }
 };
 
