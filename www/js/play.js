@@ -38,18 +38,24 @@ dodge.Play.prototype = {
 
   update: function () {
     if (this.cursor.left.isDown) {
-      this.dodger.x -= 10;
+      this.dodger.body.velocity.x = -800;
     }
     if (this.cursor.right.isDown) {
-      this.dodger.x -= 10;
-    },
-    game.physics.arcade.collide(dodger, dodging, collisionHandler)
-  }
+      this.dodger.body.velocity.x = 800;
+    }
+    if (this.dodging.y >= 568) {
+      this.dodging.y = -32
+      this.dodging.body.velocity.x = 800
+      this.dodging.x = game.rnd.integerInRange(0,320);
+    }
+    
+    game.physics.arcade.collide(this.dodger, this.dodging, this.handleCollision);
+  },
   
   handleCollision: function() {
-    console.log("U lost")
+    console.log("U lost");
     game.state.start('Play')
   }
-  }
+  };
 };
 
